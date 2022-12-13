@@ -1,18 +1,22 @@
-// Primitive Types
-// number, bool and string
+// TypeScript Arrays
 
-let empName = 'Test'
+//Implicit
+// let numSample = [1,2,3]
+// let strSample = ['a','b','c']
+// let boolSample = [true,false]
 
-let employeeName:string;
+//Explicit
+// let numSample:number[] = [1,2,3]
+// let strSample:string[] = ['a','b','c']
+// let boolSample:boolean[] = [true,false]
 
-employeeName = 'Testing'
+//Declare and Assign later
+// let numSample:number[] = [];
+// let strSample:string[] = [];
+// numSample.push(1)
+// strSample.push('d')
 
-let isPermanent:boolean = true
+//read only
+let numSample:readonly number[] = [1,2,3]
 
-let age = 30
-
-let multiply = (num:number) => {
-    return 10 * num
-}
-
-console.log(multiply(10))
+numSample.push(4)
