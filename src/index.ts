@@ -1,22 +1,45 @@
-// TypeScript Arrays
+// TypeScript Objects
 
-//Implicit
-// let numSample = [1,2,3]
-// let strSample = ['a','b','c']
-// let boolSample = [true,false]
+//Implicit or Type Inference
+// let employee = {
+//     empName:'Test',
+//     age:30,
+//     isPermanent:true
+// }
+
+// employee.age = 31
+
+// employee = {
+//     empName:'testing',
+//     age:31,
+//     isPermanent:false,
+// }
 
 //Explicit
-// let numSample:number[] = [1,2,3]
-// let strSample:string[] = ['a','b','c']
-// let boolSample:boolean[] = [true,false]
 
-//Declare and Assign later
-// let numSample:number[] = [];
-// let strSample:string[] = [];
-// numSample.push(1)
-// strSample.push('d')
+// type Employee = {
+//     empName:String,age:number,isPermanent:boolean
+// }
 
-//read only
-let numSample:readonly number[] = [1,2,3]
+// let employee:Employee = {
+//     empName:'Test',
+//     age:30,
+//     isPermanent:true,
+// }
 
-numSample.push(4)
+
+
+//Optionals
+
+type Employee = {
+    empName:String,age?:number,isPermanent:boolean
+}
+
+let employee:Employee = {
+    empName:'Test',
+    isPermanent:true,
+}
+
+
+
+
