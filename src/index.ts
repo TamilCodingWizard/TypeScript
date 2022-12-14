@@ -1,45 +1,31 @@
-// TypeScript Objects
+// TypeScript - Union Types
 
-//Implicit or Type Inference
-// let employee = {
-//     empName:'Test',
-//     age:30,
-//     isPermanent:true
-// }
+//More than one Type - union type
 
-// employee.age = 31
+// Union Type - OR - '|'
 
-// employee = {
-//     empName:'testing',
-//     age:31,
-//     isPermanent:false,
-// }
+//implicit or Type Inference
+
+// let unionArray = ['one',1,true]
+
+// unionArray.push('two')
+// unionArray.push(2)
+// unionArray.push(false)
+// console.log(unionArray)
 
 //Explicit
 
-// type Employee = {
-//     empName:String,age:number,isPermanent:boolean
-// }
+let errorCode:(string | number);
 
-// let employee:Employee = {
-//     empName:'Test',
-//     age:30,
-//     isPermanent:true,
-// }
+errorCode = '401'
+errorCode = 401
+
+let unionArray:(string|number|boolean)[] = []
 
 
-
-//Optionals
-
-type Employee = {
-    empName:String,age?:number,isPermanent:boolean
-}
-
-let employee:Employee = {
-    empName:'Test',
-    isPermanent:true,
-}
-
-
+unionArray.push('two')
+unionArray.push(2)
+unionArray.push(false)
+console.log(unionArray)
 
 
