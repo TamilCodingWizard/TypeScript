@@ -1,19 +1,22 @@
 "use strict";
-// TypeScript - Union Types
-//More than one Type - union type
-// Union Type - OR - '|'
-//implicit or Type Inference
-// let unionArray = ['one',1,true]
-// unionArray.push('two')
-// unionArray.push(2)
-// unionArray.push(false)
-// console.log(unionArray)
-//Explicit
-let errorCode;
-errorCode = '401';
-errorCode = 401;
-let unionArray = [];
-unionArray.push('two');
-unionArray.push(2);
-unionArray.push(false);
-console.log(unionArray);
+// TypeScript - any Type or Dynamic Type
+//Basic Types
+let empName = 'Test';
+console.log(empName);
+empName = 30;
+console.log(empName);
+empName = true;
+console.log(empName);
+//Array
+let anyArray = [];
+anyArray.push('Test');
+anyArray.push(30);
+anyArray.push(true);
+console.log(anyArray);
+let employee;
+employee = { empName: 'test', age: 30 };
+employee = { empName: 30, age: 'test' };
+console.log(employee);
+// null and undefined
+let x = null;
+let y = undefined;

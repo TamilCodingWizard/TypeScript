@@ -1,31 +1,40 @@
-// TypeScript - Union Types
+// TypeScript - any Type or Dynamic Type
 
-//More than one Type - union type
+//Basic Types
+let empName:any = 'Test'
 
-// Union Type - OR - '|'
+console.log(empName)
+empName = 30
+console.log(empName)
+empName = true
+console.log(empName)
 
-//implicit or Type Inference
+//Array
 
-// let unionArray = ['one',1,true]
+let anyArray:any[] = [];
 
-// unionArray.push('two')
-// unionArray.push(2)
-// unionArray.push(false)
-// console.log(unionArray)
+anyArray.push('Test')
+anyArray.push(30)
+anyArray.push(true)
 
-//Explicit
+console.log(anyArray)
 
-let errorCode:(string | number);
+//Object
 
-errorCode = '401'
-errorCode = 401
+type Employee = {
+    empName:any,
+    age:any
+}
 
-let unionArray:(string|number|boolean)[] = []
+let employee:Employee;
 
+employee = {empName:'test', age:30}
 
-unionArray.push('two')
-unionArray.push(2)
-unionArray.push(false)
-console.log(unionArray)
+employee = {empName:30,age:'test'}
 
+console.log(employee)
 
+// null and undefined
+
+let x:null = null
+let y:undefined = undefined
