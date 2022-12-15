@@ -1,40 +1,61 @@
-// TypeScript - any Type or Dynamic Type
+// TypeScript - Functions
 
-//Basic Types
-let empName:any = 'Test'
+// Function Type
+//let greet:Function;
 
-console.log(empName)
-empName = 30
-console.log(empName)
-empName = true
-console.log(empName)
-
-//Array
-
-let anyArray:any[] = [];
-
-anyArray.push('Test')
-anyArray.push(30)
-anyArray.push(true)
-
-console.log(anyArray)
-
-//Object
-
-type Employee = {
-    empName:any,
-    age:any
+let greet = () => {
+    return "Hello"
 }
 
-let employee:Employee;
+// Function with Parameters
 
-employee = {empName:'test', age:30}
+// let add = (a:number,b:number) => {
+//     return a + b;
+// }
 
-employee = {empName:30,age:'test'}
+// console.log(add(10,10))
 
-console.log(employee)
+//Function with Return type
 
-// null and undefined
+// let add = (a:number,b:number):number => {
+//     return a + b;
+// }
 
-let x:null = null
-let y:undefined = undefined
+// console.log(add(10,10))
+
+//Function with Union Type params
+
+// let add = (a:number,b:number,c:(string | number)):number => {
+//     if (typeof c === 'number') {
+//         return a + b + c;
+//     }
+//     return a + b;
+// }
+
+// console.log(add(10,10,12))
+
+
+//Function with optional params 
+
+// let add = (a:number,b:number,c?:(string | number)):number => {
+//     if (typeof c === 'number') {
+//         return a + b + c;
+//     }
+//     console.log(c)
+//     return a + b;
+// }
+
+// console.log(add(10,10))
+
+
+// Function with default value
+
+let add = (a:number,b:number,c:(string | number) = 10):number => {
+    if (typeof c === 'number') {
+        return a + b + c;
+    }
+    console.log(c)
+    return a + b;
+}
+
+console.log(add(10,10))
