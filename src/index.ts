@@ -1,111 +1,34 @@
-// TypeScript - Functions
+// TypeScript - Tuples or Typed Array
 
-// Function Type
-//let greet:Function;
+//Array
+// let userArray = ['John',30,true]
 
-let greet = () => {
-    return "Hello"
-}
+// userArray[0] = 40
+// console.log(userArray)
 
-// Function with Parameters
+//Tuple
 
-// let add = (a:number,b:number) => {
-//     return a + b;
-// }
+// let userTuple:[string,number,boolean] = ['John',30,true]
 
-// console.log(add(10,10))
+// userTuple[0] = 'Test'
 
-//Function with Return type
+// userTuple.push(4)
 
-// let add = (a:number,b:number):number => {
-//     return a + b;
-// }
-
-// console.log(add(10,10))
-
-//Function with Union Type params
-
-// let add = (a:number,b:number,c:(string | number)):number => {
-//     if (typeof c === 'number') {
-//         return a + b + c;
-//     }
-//     return a + b;
-// }
-
-// console.log(add(10,10,12))
+// console.log(userTuple)
 
 
-//Function with optional params 
+//readonly
+// let userTuple: readonly [string,number,boolean] = ['John',30,true]
 
-// let add = (a:number,b:number,c?:(string | number)):number => {
-//     if (typeof c === 'number') {
-//         return a + b + c;
-//     }
-//     console.log(c)
-//     return a + b;
-// }
+//Named
 
-// console.log(add(10,10))
+let userTuple: readonly [userName:string,age:number,isEng:boolean] = ['John',30,true]
 
 
-// Function with default value
+//Accessing Named Tuple / Destructuring
 
-// let add = (a:number,b:number,c:(string | number) = 10):number => {
-//     if (typeof c === 'number') {
-//         return a + b + c;
-//     }
-//     console.log(c)
-//     return a + b;
-// }
-
-// console.log(add(10,10))
-
-// Function with Type alias params
-
-type StrOrNum = string | number
-
-// let add = (a:number,b:number,c:StrOrNum = 10):number => {
-//     if (typeof c === 'number') {
-//         return a + b + c;
-//     }
-//     console.log(c)
-//     return a + b;
-// }
-
-// console.log(add(10,10))
-
-type User = {
-    name:string,age:number
-}
-let printObject = (user:User) => {
-    console.log(`name is ${user.name} and age is ${user.age}`)
-}
-
-printObject({name:'Test', age:30})
-
-// rest params
-
-// let add = (a:number,b:number,...c:number[]):number => {
-    
-
-//     console.log(c)
-//     let d = c.reduce((x,y) => x+y,0)
-//     return a + b + d;
-// }
-
-// console.log(add(10,10,1,1,2,3))
+let [userName,age,isEng] = userTuple
 
 
-// Function signature
+console.log(userName)
 
-let add : (x:number,y:number,...z:number[]) => void;
-
-add = (a:number,b:number,...c:number[]):number => {
-    
-
-    console.log(c)
-    let d = c.reduce((x,y) => x+y,0)
-    return a + b + d;
-}
-
-console.log(add(10,10,1,1,2,3))
