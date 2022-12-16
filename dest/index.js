@@ -1,18 +1,10 @@
 "use strict";
-// TypeScript - Tuples or Typed Array
-//Array
-// let userArray = ['John',30,true]
-// userArray[0] = 40
-// console.log(userArray)
-//Tuple
-// let userTuple:[string,number,boolean] = ['John',30,true]
-// userTuple[0] = 'Test'
-// userTuple.push(4)
-// console.log(userTuple)
-//readonly
-// let userTuple: readonly [string,number,boolean] = ['John',30,true]
-//Named
-let userTuple = ['John', 30, true];
-//Accessing Named Tuple / Destructuring
-let [userName, age, isEng] = userTuple;
-console.log(userName);
+// TypeScript - TypeAlias
+let userName = 'John';
+let isEng = true;
+let age = 30;
+let userNames = ['a', 'b'];
+let user = { name: 'John', age: 30, isEng: true };
+let errorCode = '401';
+errorCode = 401;
+let userTuple = ['John', 30];

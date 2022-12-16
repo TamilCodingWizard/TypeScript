@@ -1,34 +1,38 @@
-// TypeScript - Tuples or Typed Array
+// TypeScript - TypeAlias
 
+//Primitive Types
+type UserName = string
+type YesorNo = boolean
+type Age = number
+
+let userName:UserName = 'John'
+let isEng:YesorNo = true
+let age:Age = 30
 //Array
-// let userArray = ['John',30,true]
 
-// userArray[0] = 40
-// console.log(userArray)
+type NamesArray = string[]
 
-//Tuple
+let userNames:NamesArray = ['a','b']
 
-// let userTuple:[string,number,boolean] = ['John',30,true]
+//Object
 
-// userTuple[0] = 'Test'
+type User = {
+    name:UserName,
+    age:Age,
+    isEng:YesorNo
+}
 
-// userTuple.push(4)
+let user:User = {name:'John',age:30,isEng:true}
 
-// console.log(userTuple)
+//Union Type
 
+type StrOrNum = string | number
 
-//readonly
-// let userTuple: readonly [string,number,boolean] = ['John',30,true]
+let errorCode:StrOrNum = '401'
 
-//Named
+errorCode = 401
+//Tuples
 
-let userTuple: readonly [userName:string,age:number,isEng:boolean] = ['John',30,true]
+type NameAndAge = [name:string,age:number]
 
-
-//Accessing Named Tuple / Destructuring
-
-let [userName,age,isEng] = userTuple
-
-
-console.log(userName)
-
+let userTuple:NameAndAge = ['John',30]
