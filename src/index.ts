@@ -50,12 +50,62 @@ let greet = () => {
 
 // Function with default value
 
-let add = (a:number,b:number,c:(string | number) = 10):number => {
-    if (typeof c === 'number') {
-        return a + b + c;
-    }
-    console.log(c)
-    return a + b;
+// let add = (a:number,b:number,c:(string | number) = 10):number => {
+//     if (typeof c === 'number') {
+//         return a + b + c;
+//     }
+//     console.log(c)
+//     return a + b;
+// }
+
+// console.log(add(10,10))
+
+// Function with Type alias params
+
+type StrOrNum = string | number
+
+// let add = (a:number,b:number,c:StrOrNum = 10):number => {
+//     if (typeof c === 'number') {
+//         return a + b + c;
+//     }
+//     console.log(c)
+//     return a + b;
+// }
+
+// console.log(add(10,10))
+
+type User = {
+    name:string,age:number
+}
+let printObject = (user:User) => {
+    console.log(`name is ${user.name} and age is ${user.age}`)
 }
 
-console.log(add(10,10))
+printObject({name:'Test', age:30})
+
+// rest params
+
+// let add = (a:number,b:number,...c:number[]):number => {
+    
+
+//     console.log(c)
+//     let d = c.reduce((x,y) => x+y,0)
+//     return a + b + d;
+// }
+
+// console.log(add(10,10,1,1,2,3))
+
+
+// Function signature
+
+let add : (x:number,y:number,...z:number[]) => void;
+
+add = (a:number,b:number,...c:number[]):number => {
+    
+
+    console.log(c)
+    let d = c.reduce((x,y) => x+y,0)
+    return a + b + d;
+}
+
+console.log(add(10,10,1,1,2,3))

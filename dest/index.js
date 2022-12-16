@@ -5,39 +5,22 @@
 let greet = () => {
     return "Hello";
 };
-// Function with Parameters
-// let add = (a:number,b:number) => {
-//     return a + b;
-// }
-// console.log(add(10,10))
-//Function with Return type
-// let add = (a:number,b:number):number => {
-//     return a + b;
-// }
-// console.log(add(10,10))
-//Function with Union Type params
-// let add = (a:number,b:number,c:(string | number)):number => {
-//     if (typeof c === 'number') {
-//         return a + b + c;
-//     }
-//     return a + b;
-// }
-// console.log(add(10,10,12))
-//Function with optional params 
-// let add = (a:number,b:number,c?:(string | number)):number => {
-//     if (typeof c === 'number') {
-//         return a + b + c;
-//     }
-//     console.log(c)
-//     return a + b;
-// }
-// console.log(add(10,10))
-// Function with default value
-let add = (a, b, c = 10) => {
-    if (typeof c === 'number') {
-        return a + b + c;
-    }
-    console.log(c);
-    return a + b;
+let printObject = (user) => {
+    console.log(`name is ${user.name} and age is ${user.age}`);
 };
-console.log(add(10, 10));
+printObject({ name: 'Test', age: 30 });
+// rest params
+// let add = (a:number,b:number,...c:number[]):number => {
+//     console.log(c)
+//     let d = c.reduce((x,y) => x+y,0)
+//     return a + b + d;
+// }
+// console.log(add(10,10,1,1,2,3))
+// Function signature
+let add;
+add = (a, b, ...c) => {
+    console.log(c);
+    let d = c.reduce((x, y) => x + y, 0);
+    return a + b + d;
+};
+console.log(add(10, 10, 1, 1, 2, 3));
