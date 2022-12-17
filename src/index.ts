@@ -1,38 +1,20 @@
-// TypeScript - TypeAlias
+// TypeScript - Type Casting
 
-//Primitive Types
-type UserName = string
-type YesorNo = boolean
-type Age = number
+//syntax
+// as or <>
 
-let userName:UserName = 'John'
-let isEng:YesorNo = true
-let age:Age = 30
-//Array
+//unknown string to string
+let x:unknown = 'Hello'
 
-type NamesArray = string[]
+console.log((x as string).length)
+console.log((<string>x).length)
 
-let userNames:NamesArray = ['a','b']
+//unknown number to string
+let y:unknown = 20
 
-//Object
+console.log((y as string).length)
 
-type User = {
-    name:UserName,
-    age:Age,
-    isEng:YesorNo
-}
+//DOM
 
-let user:User = {name:'John',age:30,isEng:true}
-
-//Union Type
-
-type StrOrNum = string | number
-
-let errorCode:StrOrNum = '401'
-
-errorCode = 401
-//Tuples
-
-type NameAndAge = [name:string,age:number]
-
-let userTuple:NameAndAge = ['John',30]
+let input = document.querySelector('input') as HTMLInputElement
+let inputValue = input.value
