@@ -1,20 +1,32 @@
-// TypeScript - Type Casting
+// TypeScript - Enums
 
-//syntax
-// as or <>
+//enum - group of constants
 
-//unknown string to string
-let x:unknown = 'Hello'
+//number 
 
-console.log((x as string).length)
-console.log((<string>x).length)
+enum Direction {
+    East = 100,
+    West,
+    South,
+    North,
+}
 
-//unknown number to string
-let y:unknown = 20
+console.log(Direction.South)
 
-console.log((y as string).length)
+enum StatusCode {
+    Success = 200,
+    Unauthorized = 401,
+    ServerError = 500
+}
 
-//DOM
 
-let input = document.querySelector('input') as HTMLInputElement
-let inputValue = input.value
+//string
+
+enum Direction1 {
+    East = 'East',
+    West = 'West',
+    South = 'South',
+    North = 'North',
+}
+
+console.log(Direction1.South)
