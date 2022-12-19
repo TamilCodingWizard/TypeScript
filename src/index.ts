@@ -1,32 +1,47 @@
-// TypeScript - Enums
+// TypeScript - Interfaces
 
-//enum - group of constants
+//Interface - Only work with Objects
 
-//number 
-
-enum Direction {
-    East = 100,
-    West,
-    South,
-    North,
+interface User {
+    name:string,
+    age:number
 }
 
-console.log(Direction.South)
+const user:User = {
+    name:'Test',
+    age:40
+}
 
-enum StatusCode {
-    Success = 200,
-    Unauthorized = 401,
-    ServerError = 500
+//function Interface
+interface Function {
+    (x:number,y:number): number
+}
+
+let add:Function = (p1:number,p2:number) => {
+    return p1 + p2
 }
 
 
-//string
+//Extending Interfaces
 
-enum Direction1 {
-    East = 'East',
-    West = 'West',
-    South = 'South',
-    North = 'North',
+interface Employee extends User {
+    employeeId:number
 }
 
-console.log(Direction1.South)
+const employee:Employee = {
+    name:'John',
+    age:30,
+    employeeId:100
+}
+
+
+//type cant be replaced with
+
+type StrOrNum = string | number
+
+let errorCode:StrOrNum = '401'
+
+errorCode = 401
+
+
+
