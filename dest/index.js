@@ -1,19 +1,27 @@
 "use strict";
-// TypeScript - Abstract Class
-//Abstract class - Incomplete class
+// TypeScript - Data Modifiers 
+// Public, Protected, private
+//readonly
 class Person {
+    constructor(name) {
+        this.name = name;
+    }
 }
-// Child class
-class Student extends Person {
-    constructor(x) {
-        super();
+class Employee extends Person {
+    constructor() {
+        super(...arguments);
         this.print = () => {
             console.log(this.name);
         };
-        this.name = x;
+        this.changeName = (name) => {
+            this.name = name;
+        };
     }
 }
-let studentObject = new Student('John');
-studentObject.print();
-//typeof
-console.log('hi');
+let empObject = new Employee('John');
+empObject.print();
+// empObject.changeName('Test')
+// empObject.print()
+// empObject.name = 'Testing'
+// empObject.print()
+// read only

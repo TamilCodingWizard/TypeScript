@@ -1,39 +1,45 @@
-// TypeScript - Abstract Class
+// TypeScript - Data Modifiers 
 
-//Abstract class - Incomplete class
+// Public, Protected, private
 
-abstract class Person {
-    abstract name:string
+//readonly
 
-    abstract print():void
+class Person {
+     name:string
+
+    constructor(name:string) {
+        this.name = name
+    }
 }
 
-// Child class
-
-class Student extends Person {
-    name: string
-
-    constructor(x:string) {
-        super()
-        this.name = x
-    }
+class Employee extends Person {
 
     print = () => {
         console.log(this.name)
     }
+
+    changeName = (name:string) => {
+        this.name = name
+    }
 }
 
-let studentObject = new Student('John')
+let empObject = new Employee('John')
 
-studentObject.print()
+empObject.print()
+
+// empObject.changeName('Test')
+
+// empObject.print()
+
+// empObject.name = 'Testing'
+
+// empObject.print()
 
 
-// Abstract vs Interface
 
-interface AddressInterface {
-    city:string
-}
 
-//typeof
 
-console.log('hi')
+
+
+
+// read only
