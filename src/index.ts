@@ -1,47 +1,69 @@
-// TypeScript - Interfaces
+// TypeScript - Class
 
-//Interface - Only work with Objects
+// simple class
+class User {
+    id:number 
 
-interface User {
-    name:string,
-    age:number
+    constructor(x:number) {
+        this.id = x
+    }
 }
 
-const user:User = {
-    name:'Test',
-    age:40
+let userobject = new User(10)
+
+console.log(userobject.id)
+
+// Interface
+
+interface PersonInterface {
+    id:number,
+    name:string
 }
 
-//function Interface
-interface Function {
-    (x:number,y:number): number
-}
-
-let add:Function = (p1:number,p2:number) => {
-    return p1 + p2
-}
-
-
-//Extending Interfaces
-
-interface Employee extends User {
-    employeeId:number
-}
-
-const employee:Employee = {
-    name:'John',
-    age:30,
-    employeeId:100
+interface AddressInterface {
+    city:string    
 }
 
 
-//type cant be replaced with
+// class implements interface
 
-type StrOrNum = string | number
+class Person implements PersonInterface,AddressInterface {
+    id:number
+    name:string
+    city:string
 
-let errorCode:StrOrNum = '401'
+    constructor(id:number,name:string,city:string) {
+        this.id = id
+        this.name = name
+        this.city= city
+    }
 
-errorCode = 401
+    getName = () => {
+        return this.name
+    }
+
+}
+
+let person = new Person(100,'John','Chennai')
+console.log(person.name)
+console.log(person.getName())
 
 
+// class implements multiple interfaces
 
+
+//extends
+
+class Student extends Person {
+    studentId:number = 101
+
+    print() {
+        console.log(`name is ${this.name} and id is ${this.studentId}`)
+    }
+
+}
+
+
+let student = new Student(100,'Testing','Chennai')
+
+student.print()
