@@ -1,69 +1,39 @@
-// TypeScript - Class
+// TypeScript - Abstract Class
 
-// simple class
-class User {
-    id:number 
+//Abstract class - Incomplete class
 
-    constructor(x:number) {
-        this.id = x
-    }
+abstract class Person {
+    abstract name:string
+
+    abstract print():void
 }
 
-let userobject = new User(10)
-
-console.log(userobject.id)
-
-// Interface
-
-interface PersonInterface {
-    id:number,
-    name:string
-}
-
-interface AddressInterface {
-    city:string    
-}
-
-
-// class implements interface
-
-class Person implements PersonInterface,AddressInterface {
-    id:number
-    name:string
-    city:string
-
-    constructor(id:number,name:string,city:string) {
-        this.id = id
-        this.name = name
-        this.city= city
-    }
-
-    getName = () => {
-        return this.name
-    }
-
-}
-
-let person = new Person(100,'John','Chennai')
-console.log(person.name)
-console.log(person.getName())
-
-
-// class implements multiple interfaces
-
-
-//extends
+// Child class
 
 class Student extends Person {
-    studentId:number = 101
+    name: string
 
-    print() {
-        console.log(`name is ${this.name} and id is ${this.studentId}`)
+    constructor(x:string) {
+        super()
+        this.name = x
     }
 
+    print = () => {
+        console.log(this.name)
+    }
 }
 
+let studentObject = new Student('John')
 
-let student = new Student(100,'Testing','Chennai')
+studentObject.print()
 
-student.print()
+
+// Abstract vs Interface
+
+interface AddressInterface {
+    city:string
+}
+
+//typeof
+
+console.log('hi')
