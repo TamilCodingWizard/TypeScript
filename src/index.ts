@@ -1,45 +1,39 @@
-// TypeScript - Data Modifiers 
+// TypeScript - Generics
 
-// Public, Protected, private
+//Resuable code
 
-//readonly
-
-class Person {
-     name:string
-
-    constructor(name:string) {
-        this.name = name
-    }
+const toArray = (x:any,y:any,z:any) => {
+    return [x,y,z]
 }
 
-class Employee extends Person {
+let arr = toArray('1','2',3)
 
-    print = () => {
-        console.log(this.name)
-    }
+console.log(arr)
+// Generics
 
-    changeName = (name:string) => {
-        this.name = name
-    }
+const toArrayGeneric = <T>(x:T,y:T,z:T) => {
+    return [x,y,z]
 }
 
-let empObject = new Employee('John')
+let genericArray = toArrayGeneric<number>(1,2,3)
 
-empObject.print()
+console.log(genericArray)
 
-// empObject.changeName('Test')
+// Multiple Types
 
-// empObject.print()
+// let printValues = <X,Y,Z>(a:X,b:Y,c:Z) => {
+//     console.log(`a is ${typeof a} b is ${typeof b} c is ${typeof c}`)
+// }
 
-// empObject.name = 'Testing'
+// printValues(1,"one",true)
 
-// empObject.print()
-
-
-
-
+// Type and Generics Together
 
 
+// Multiple Types
 
+let printValues = <X,Y,Z>(a:X,b:Y,c:Z,d:string) => {
+    console.log(`a is ${typeof a} b is ${typeof b} c is ${typeof c}`)
+}
 
-// read only
+printValues(1,"one",true,'Hi')
